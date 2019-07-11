@@ -6,8 +6,9 @@
  * @flow
  */
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import React, { Component } from 'react';
+import { Platform, StyleSheet, Text, View } from 'react-native';
+import { AnimatedCircularProgress, Circ } from 'react-native-circular-progress';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -24,6 +25,18 @@ export default class App extends Component<Props> {
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
+
+        <AnimatedCircularProgress
+          size={120}
+          width={15}
+          fill={80}
+          rotation={360}
+          tintColor="#00e0ff"
+          onAnimationComplete={() => console.log('onAnimationComplete')}
+          backgroundColor="#3d5875"
+          lineCap="round"
+          duration={500}
+        />
       </View>
     );
   }
